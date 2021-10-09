@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import Activate from "./components/Activate/Activate"
+import HeaderMobile from "./components/Header/HeaderMobile"
+import HeaderDesktop from "./components/Header/HeaderDesktop"
+import NowTrending from "./components/NowTrending/NowTrending"
+
+import Row from "./components/Row/Row"
+import usePointbreak from "./hooks/usePointbreak"
+
+
+import requests from "./logic/requests"
+
+
+import euphoriacover from "./assets/euphoriacover.png"
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    // usepointbreak
+    const { width } = usePointbreak();
+    const breakpoint = 800;
+
+    //fetching
+    
+    return (
+        <div className="app">
+
+            <Activate />
+            {width < breakpoint ? <HeaderMobile /> : <HeaderDesktop />}
+            
+            <NowTrending />
+
+            <Row
+                title="PARA VER EN UN PUENTE"
+                fetchUrl={requests.fetchTrending}
+                isFeatured={false}
+                background={null}
+            />           
+        </div>
+    );
 }
 
 export default App;

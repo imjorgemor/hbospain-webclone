@@ -1,0 +1,9 @@
+.nowtrending-container{
+    height: 30vh;
+    max-height: 1000px;
+    
+    width: 100vw;
+    background-color: #262626;
+    color: #fff;
+    margin: 0 0 10px;
+}
