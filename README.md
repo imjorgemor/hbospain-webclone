@@ -19,9 +19,8 @@ This project is a easy HBO clone. Scroll up/ down to see what tv show or film is
 Project has been created with:
 * React js
 * The Mobie Data Base API (https://developers.themoviedb.org/3/getting-started/introduction)
-* react-youtube library 
-* movie trailer
-* Firebase for login storage
+* React-youtube library 
+* Movie trailer librart
 	
 ## Setup
 To run this project, install it locally using npm:
@@ -52,13 +51,11 @@ The fonts have been also uploaded to the project (instead of using a CDN link) t
 
 ## React components
 ```
-Activate subscription
-Navbar mobile
-Navbar Tablet to laptop
-MainVideos
-SectionVideos
-VideoInfo
-RowVideos
+Activate
+HeaderDesktop
+HeaderMobile
+NowTrending
+Row
 Footer
 ```
 
@@ -81,3 +78,9 @@ usePointbreak
 * Search Component
 * Watched videos (watchlist)
 * My Account information
+
+// some notes to next developments
+dispatch reduce
+infinite scroll
+responsive
+placeholder

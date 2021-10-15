@@ -1,28 +1,19 @@
-import React, { useState, useEffect } from 'react'
-import axios from '../../logic/axios';
+import React, { useState} from 'react'
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
 import RowNavbar from './RowNavbar';
+import { useFetch } from '../../hooks/useFetch';
+
 
 import "./row.css"
 
 const base_url = "https://image.tmdb.org/t/p/original/"
 
-const Row = ({ title, fetchUrl, isFeatured, background }) => {
+const Row = ({ title, fetchUrl}) => {
 
-    const [movies, setMovie] = useState([]);
     const [trailerUrl, setTrailerUrl] = useState("");
 
-    useEffect(() => {
-
-        const fetchData = async () => {
-            const request = await axios.get(fetchUrl);
-            console.log(request.data.results);
-            setMovie(request.data.results);
-            return request;
-        }
-        fetchData();
-    }, [fetchUrl])
+    const movies = useFetch(fetchUrl);
 
     const opts = {
         height: "390",
@@ -33,7 +24,6 @@ const Row = ({ title, fetchUrl, isFeatured, background }) => {
     };
 
     const handleClick = (movie) => {
-        console.log(movie)
         if (trailerUrl) {
             setTrailerUrl("");
         } else {
@@ -44,11 +34,7 @@ const Row = ({ title, fetchUrl, isFeatured, background }) => {
 
                 })
                 .catch((error) => console.log(error));
-
-
-            //(console.log(movie.name || movie.title))
         }
-
     }
 
     return (
@@ -59,34 +45,41 @@ const Row = ({ title, fetchUrl, isFeatured, background }) => {
                     <span>{title}</span>
                 </a>
                 <div className="row-navbar">
-                    <RowNavbar />
+                    {/* <RowNavbar /> */}
                 </div>
             </div>
 
-
-
-            <div className="row-posters">
+            <div className="row-previewlist">
                 {
                     movies.map(movie => (
-                        
-                            <img
-                            className="row-poster"
-                            onClick={() => handleClick(movie)}
-                            key={movie.id}
-                            src={`${base_url}${movie.backdrop_path}`}
-                            alt={movie.name}
-                        />
-                        
-                        
-                        
-                        
+
+                        <div className="preview-container"
+                        key={movie.id}>
+                            <div
+                                className="preview-card"
+                            >
+                                <img
+                                    className="row-preview"
+                                    src={`${base_url}${movie.backdrop_path}`}
+                                    alt={movie.title}
+                                />
+
+                                <div className="fade-preview"
+                                    onClick={() => handleClick(movie)}
+                                ></div>
+                            </div>
+                            <div className="preview-title">
+                                    {movie.title ? movie.title : movie.name}
+                                </div>
+                        </div>
                     ))
                 }
-                
             </div>
+
             {
                 trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />
             }
+
         </section>
     )
 }

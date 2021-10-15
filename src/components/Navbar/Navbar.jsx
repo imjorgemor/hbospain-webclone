@@ -8,12 +8,12 @@ const Navbarmobile = () => {
                     <li className="nav-item">
                         <a href="#!" className="link-item">HOME</a>
                     </li>
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <a href="#!" className="link-item">KIDS</a>
-                    </li>
-                    <li className="nav-item">
+                    </li> */}
+                    {/* <li className="nav-item">
                         <a href="#!" className="link-item">WATCHLIST</a>
-                    </li>
+                    </li> */}
                 </ul>
             </nav>
     )

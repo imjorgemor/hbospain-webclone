@@ -1,91 +1,132 @@
-.row-container{
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.row-container {
     background-color: #000;
     color: #fff;
     width: 100vw;
     margin: 10px 0;
     padding: 10px 0;
-
-
 }
 
-.row-title{
+.row-title {
     margin: 0px 0px 10px;
     padding: 0px 46.6667px;
     height: 30px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    
 }
 
-.row-title > a {
+.row-title>a {
     text-decoration: none;
     color: white;
     cursor: pointer;
 }
 
-.row-title > a > span{
+.row-title>a>span {
     font-size: 16px;
-    font-weight: 300; 
+    font-weight: 300;
 }
 
-.row-title > a:hover{
+.row-title>a:hover {
     color: #00a3da;
 }
 
-.row-posters{
-    display: flex;
-    flex-direction: row;
+.row-previewlist {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 20 minmax(150px);
+    grid-auto-flow: column;
     overflow-y: hidden;
     overflow-x: scroll;
     margin: 0px 0px 10px;
     padding: 0px 46.6667px;
+
 }
 
-.row-posters::-webkit-scrollbar{
+.row-previewlist::-webkit-scrollbar {
     display: none;
 }
 
-.row-poster{
+/* PREVIEW COMPONENT */
+
+.preview-container {
+    cursor: pointer;
+    color: #fff;
+}
+
+.preview-container:hover .preview-title {
+    color: #00a3da;
+}
+
+.preview-card {
+    color: white;
     position: relative;
-    border: 1px solid transparent;
-    width: 100%;
+    height: 150px;
+    width: 270px;
+    padding: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.row-preview {
+    position: relative;
     object-fit: cover;
-    max-height: 142px;
-    margin-right: 10px;
-    transition: transform 450ms;
-    
+    height: 100%;
+    z-index: 2;
 }
 
-.row-poster:hover{
+.fade-preview {
+    position: absolute;
+    top: 0;
+    background: linear-gradient(0deg, rgba(249, 249, 249, 0) 45%, rgba(9, 9, 9, 0.5068073830409356) 78%);
+    height: 100%;
+    width: 99%;
+    z-index: 1;
+}
+
+.preview-card:hover .row-preview {
+    z-index: 1;
+}
+
+.fade-preview:hover {
+    z-index: 9;
     border: 1px solid #00a3da;
-
 }
 
-
+.preview-title {
+    margin-top: 5px;
+    color: #fff;
+    z-index: 200;
+    max-height: 300px;
+}
 
 
 /* MEDIA QUERIES */
-@media (min-width:500px){
-    .row-title > a > span{
+@media (min-width:500px) {
+    .row-title>a>span {
         font-size: 20px;
     }
 }
 
-@media (min-width:800px){
-    .row-title > a > span{
+@media (min-width:800px) {
+    .row-title>a>span {
         font-size: 28px;
     }
 }
 
 /* ROW NAVBAR */
-.rownavbar-container{
+.rownavbar-container {
     height: 30px;
     padding-left: 20px;
 }
 
-.rownavbar-container > a{
+.rownavbar-container>a {
     font-size: 14px;
     color: white;
     text-decoration: none;
@@ -93,5 +134,4 @@
     border-radius: 2em;
     padding: 5px 20px;
     margin-bottom: 0px;
-
 }
