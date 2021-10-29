@@ -1,5 +1,7 @@
 # HBO CLONE
 
+![Responsive] 
+
 Front-end application clone of the former HBO Video Streaming platform for educational purposes developed with React js. Probably the most accurate HBO clone on all Github. 
 
 ## Table of contents
@@ -36,7 +38,7 @@ $ npm start
 Customized hook that changes the behaviour of the header component depending on the device.
 
 ### useRef react hook for infinite scroll
-... description.
+Inifinte scroll in the home page to fetch the different types of films.
 
 ### css responsive design good practices
 Using relative withs and max-widths css properties together with FLEXBOX allowed this project to be responsive from mobile to laptop (max-width: px).
