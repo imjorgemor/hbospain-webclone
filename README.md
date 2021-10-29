@@ -1,6 +1,6 @@
 # HBO CLONE
 
-![cover] (https://github.com/IMGEORGEMOR/hbospain-webclone/blob/main/src/assets/cover.png)
+
 
 Front-end application clone of the former HBO Video Streaming platform for educational purposes developed with React js. Probably the most accurate HBO clone on all Github. 
 
@@ -65,7 +65,7 @@ usePointbreak
 
 ## App preview
 ### Responsive design
-![Responsive]
+![Responsive](https://github.com/IMGEORGEMOR/hbospain-webclone/blob/main/src/assets/cover.png)
 
 ### Scroll'n snapping
 ![InfiniteScroll]
