@@ -67,10 +67,12 @@ usePointbreak
 
 ## App preview
 ### Responsive design
+#### mobile view
 ![Responsive](https://github.com/IMGEORGEMOR/hbospain-webclone/blob/main/src/assets/cover.png)
 
-### Scroll'n snapping
-![InfiniteScroll]
+#### desktop view
+
+
 
 ## Future developments
 * Loading
