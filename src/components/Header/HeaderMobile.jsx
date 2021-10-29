@@ -13,7 +13,6 @@ const Header = () => {
     const ref = useRef(null);
 
     const handleScroll = () => {
-        console.log(isSticky);
 
         if (ref.current) {
             setSticky(ref.current.getBoundingClientRect().top <= -0.0001);
