@@ -2,9 +2,7 @@
 
 ![logo](https://github.com/IMGEORGEMOR/hbospain-webclone/blob/main/src/assets/hbologo_readme.png)
 
-
-
-Front-end application clone of the former HBO Video Streaming platform for educational purposes developed with React js. Probably the most accurate HBO clone on all Github. 
+Front-end application clone of the former HBO Video Streaming platform for educational purposes developed with React js. Probably the most accurate HBO clone on all Github. Already working on the HBOMAX platform.
 
 ## Table of contents
 * [General info](#general-info)
@@ -40,13 +38,10 @@ $ npm start
 Customized hook that changes the behaviour of the header component depending on the device.
 
 ### useRef react hook for infinite scroll
-Inifinte scroll in the home page to fetch the different types of films.
+Inifinte scroll in the home page to fetch the different types of films while scrolling.
 
 ### css responsive design good practices
 Using relative withs and max-widths css properties together with FLEXBOX allowed this project to be responsive from mobile to laptop (max-width: px).
-
-### Performance practices
-The fonts have been also uploaded to the project (instead of using a CDN link) to improve performance of the project.
 
 
 ## React components
@@ -67,22 +62,12 @@ usePointbreak
 
 ## App preview
 ### Responsive design
+![Responsive](https://github.com/IMGEORGEMOR/hbospain-webclone/blob/main/src/assets/ezgif.com-gif-maker.gif)
 #### mobile view
-![Responsive](https://github.com/IMGEORGEMOR/hbospain-webclone/blob/main/src/assets/cover.png)
+![mobile](https://github.com/IMGEORGEMOR/hbospain-webclone/blob/main/src/assets/cover.png)
 
 #### desktop view
-
-
+![desktop](https://github.com/IMGEORGEMOR/hbospain-webclone/blob/main/src/assets/desktop.png)
 
 ## Future developments
-* Loading
-* LogIn
-* Search Component
-* Watched videos (watchlist)
-* My Account information
-
-// some notes to next developments
-dispatch reduce
-infinite scroll
-responsive
-placeholder
+Migration to the new hbomax
