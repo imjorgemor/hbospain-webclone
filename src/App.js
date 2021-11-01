@@ -4,6 +4,7 @@ import HeaderMobile from "./components/Header/HeaderMobile"
 import HeaderDesktop from "./components/Header/HeaderDesktop"
 import Row from "./components/Row/Row"
 import usePointbreak from "./hooks/usePointbreak"
+import useInfinityAndBeyond from "./hooks/useInfinityAndBeyond"
 
 import requests from "./logic/requests"
 
@@ -14,58 +15,41 @@ function App() {
     const breakpoint = 800;
 
     //infinite scroll
-    const [show, setShow] = useState(false);
-    const divRef = useRef();
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const div = divRef.current
-            const { y } = (div.getBoundingClientRect());
-            console.log(y);
-            const showMore = y <= 900 ? true : false;
-            setTimeout(() => {
-                setShow(showMore)
-            }, 1000);
-        }
-
-        window.addEventListener("scroll", handleScroll)
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll)
-        }
-
-    }, [])
+    const elementRef = useRef();
+    const isNearScreen = useInfinityAndBeyond({ elementRef });
 
 
     return (
-        <div className="app">
+        <div className="app" >
 
             <Activate />
             {width < breakpoint ? <HeaderMobile /> : <HeaderDesktop />}
 
-            <Row
-                title="TENDENCIAS"
-                fetchUrl={requests.fetchTrending}
-            />
-            <Row
-                title="TU PELI DE TARDE"
-                fetchUrl={requests.fetchRomance}
-            />
-            <Row
-                title="LA CUENTA ATRÁS PARA HALLOWEEN"
-                fetchUrl={requests.fetchHorror}
-            />
+            <div className="main-sections" style={{minHeight:"100vh"}}>
+                <Row
+                    title="TENDENCIAS"
+                    fetchUrl={requests.fetchTrending}
+                />
+                <Row
+                    title="TU PELI DE TARDE"
+                    fetchUrl={requests.fetchRomance}
+                />
+                <Row
+                    title="LA CUENTA ATRÁS PARA HALLOWEEN"
+                    fetchUrl={requests.fetchHorror}
+                />
 
-            <Row
-                title="TOP 20 SERIES EN ESPAÑA "
-                fetchUrl={requests.fetchTopseries}
-            />
+                <Row
+                    title="TOP 20 SERIES EN ESPAÑA "
+                    fetchUrl={requests.fetchTopseries}
+                />
+            </div>
 
-            <div ref={divRef}>
+            <div ref={elementRef}>
 
             </div>
 
-            {show ?
+            {isNearScreen ?
 
                 <div>
                     <Row
