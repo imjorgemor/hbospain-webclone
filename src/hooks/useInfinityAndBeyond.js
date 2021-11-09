@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
-const useInfinityAndBeyond = ({ elementRef }) => {
-    const [isNearScreen, setShow] = useState(false);
+const useInfinityAndBeyond = () => {
+    const [show, setShow] = useState(false);
+    const fromRef = useRef();
+
 
     useEffect(() => {
         const onChange = (entries) => {
@@ -9,21 +11,21 @@ const useInfinityAndBeyond = ({ elementRef }) => {
             const elemento = entries[0]
             console.log(elemento.isIntersecting)
             if (elemento.isIntersecting) {
-                setTimeout(() => {
+               
                     setShow(true);
 
                     observer.disconnect();
-                }, 3000);
+                
             }
         }
-        const observer = new IntersectionObserver(onChange, { rootMargin: "100px" })
+        const observer = new IntersectionObserver(onChange, { rootMargin: "10px" })
 
-        observer.observe(elementRef.current)
+        observer.observe(fromRef.current)
 
         return () => observer.disconnect()
     }, [])
 
-    return isNearScreen;
+    return {show, fromRef};
 }
 
 export default useInfinityAndBeyond;
