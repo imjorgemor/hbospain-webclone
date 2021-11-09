@@ -11,10 +11,12 @@ const useInfinityAndBeyond = () => {
             const elemento = entries[0]
             console.log(elemento.isIntersecting)
             if (elemento.isIntersecting) {
-               
+                setTimeout(() => {
                     setShow(true);
-
-                    observer.disconnect();
+                    observer.disconnect(); 
+                }, 1000);
+               
+                    
                 
             }
         }

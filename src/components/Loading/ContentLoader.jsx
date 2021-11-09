@@ -1,13 +1,11 @@
 import React from 'react'
+import "./loaderstyle.css"
 
 
 const PlaceHolder = () => {
     return (
-        <div
-            style={{color:"white"}}
-            
-            >
-            <p>estoy cargando vato</p>
+        <div className="loading-box">
+            <p>Loading ...</p> 
             
         </div>
     )

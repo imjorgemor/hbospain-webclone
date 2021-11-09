@@ -63,11 +63,6 @@ function App() {
                     fetchUrl={requests.fetchScify}
                     
                 />
-
-
-
-
-
             </div>
         </div>
     );
