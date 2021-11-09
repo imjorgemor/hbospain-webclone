@@ -6,7 +6,7 @@ import Row from "./components/Row/Row"
 import usePointbreak from "./hooks/usePointbreak"
 import useInfinityAndBeyond from "./hooks/useInfinityAndBeyond"
 
-import requests from "./logic/requests"
+import requests from "./services/requests"
 
 function App() {
 

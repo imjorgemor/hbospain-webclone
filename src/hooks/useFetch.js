@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { fetchData } from '../logic/fetchData';
+import { fetchData } from '../services/fetchData';
 
 export const useFetch = (fetchUrl) => {
 
