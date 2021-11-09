@@ -1,7 +1,7 @@
 import React, { useState} from 'react'
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
-import RowNavbar from './RowNavbar';
+//import RowNavbar from './RowNavbar';
 import { useFetch } from '../../hooks/useFetch';
 
 
@@ -9,11 +9,11 @@ import "./row.css"
 
 const base_url = "https://image.tmdb.org/t/p/original/"
 
-const Row = ({ title, fetchUrl}) => {
+const Row = ({ title, movies }) => {
 
     const [trailerUrl, setTrailerUrl] = useState("");
 
-    const movies = useFetch(fetchUrl);
+    //const movies = useFetch(fetchUrl);
 
     const opts = {
         height: "390",

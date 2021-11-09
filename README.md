@@ -37,19 +37,24 @@ $ npm start
 ### Responsive design with different react components useBreakpoint 
 Customized hook that changes the behaviour of the header component depending on the device.
 
-### useRef react hook for infinite scroll
-Inifinte scroll in the home page to fetch the different types of films while scrolling.
+### useRef hook, lazy load and suspense for infinite scroll
+Inifinte scroll in the home page to fetch the different types of films while scrolling and improve performance with the lazy load avoiding to load the script until the user does not need it.
 
 ### css responsive design good practices
 Using relative withs and max-widths css properties together with FLEXBOX allowed this project to be responsive from mobile to laptop (max-width: px).
 
 
 ## React components
+### Screens
+```
+RowScreen
+```
+
+### Components
 ```
 Activate
 HeaderDesktop
 HeaderMobile
-NowTrending
 Row
 Footer
 ```
