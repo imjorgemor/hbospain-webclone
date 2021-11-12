@@ -8,7 +8,6 @@ export const useFetch = (fetchUrl) => {
     useEffect(() => {
         fetchData(fetchUrl)
         .then(setMovies);
-
     }, [fetchUrl])
 
     return movies;

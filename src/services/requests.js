@@ -25,7 +25,6 @@ const requests = {
 
     //VIAJA A OTRA DIMENSIÓN
     fetchScify: `https://api.themoviedb.org/3/discover/movie?api_key=bf4c98ecfc269cd7a37e93dc80d3098f&language=en-US&sort_by=popularity.desc&page=1&with_genres=878`
-    
 }
 
 export default requests;

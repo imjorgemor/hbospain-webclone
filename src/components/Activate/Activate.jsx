@@ -2,7 +2,6 @@ import React from 'react'
 import Alert from '../../assets/alert.svg'
 import "./activate.css"
 
-
 const Activate = () => {
     return (
         <aside className="reactivate-container">

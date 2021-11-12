@@ -1,9 +1,6 @@
 import React, { useState} from 'react'
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
-//import RowNavbar from './RowNavbar';
-import { useFetch } from '../../hooks/useFetch';
-
 
 import "./row.css"
 
@@ -13,9 +10,8 @@ const Row = ({ title, movies }) => {
 
     const [trailerUrl, setTrailerUrl] = useState("");
 
-    //const movies = useFetch(fetchUrl);
-
     const opts = {
+
         height: "390",
         width: "100%",
         playerVars: {
@@ -24,6 +20,7 @@ const Row = ({ title, movies }) => {
     };
 
     const handleClick = (movie) => {
+        
         if (trailerUrl) {
             setTrailerUrl("");
         } else {
@@ -31,7 +28,6 @@ const Row = ({ title, movies }) => {
                 .then((url) => {
                     const urlParams = new URLSearchParams(new URL(url).search);
                     setTrailerUrl(urlParams.get('v'));
-
                 })
                 .catch((error) => console.log(error));
         }

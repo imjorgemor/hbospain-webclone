@@ -8,6 +8,7 @@ const Row = lazy(() => {
     return new Promise(resolve => {
         setTimeout(() => resolve(import("../components/Row/Row")), 1000);
     });
+    
 });
 
 
@@ -15,8 +16,7 @@ const RowScreen = ({ title, fetchUrl }) => {
 
     const { show, fromRef } = useInfinityAndBeyond();
     const movies = useFetch(fetchUrl);
-    console.log(movies)
-
+    //console.log(movies)
 
     return (
         <div
@@ -25,17 +25,15 @@ const RowScreen = ({ title, fetchUrl }) => {
         >
             <Suspense
                 fallback={<PlaceHolder />}>
-                {show ?
-
-                    <Row
+                {show ? (
+                    < Row
                         title={title}
                         movies={movies}
                     />
-                    :
-                    <PlaceHolder/>}
+                ) : (
+                    <PlaceHolder />
+                )}
             </Suspense>
-
-
         </div>
     )
 }

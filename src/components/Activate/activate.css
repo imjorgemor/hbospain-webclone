@@ -1,4 +1,4 @@
-.reactivate-container{
+.reactivate-container {
     min-height: 101px;
     background-color: #ff3c3c;
     color: #fff;
@@ -9,14 +9,14 @@
     width: 100vw;
 }
 
-.main-text{
+.main-text {
     display: flex;
     flex-direction: row;
 }
 
-.alert{
+.alert {
     padding: 3px 10px 0px 0px;
-    height: 25px; 
+    height: 25px;
 }
 
 .alert-text {
@@ -25,7 +25,7 @@
     line-height: 1.2em;
 }
 
-.link-container{
+.link-container {
     padding-top: 1.7em;
     display: block;
     display: flex;
@@ -33,7 +33,7 @@
     align-items: center;
 }
 
-.reactivate-link{
+.reactivate-link {
     margin: auto;
     color: #fff;
     padding: 6px 24px;
@@ -45,24 +45,25 @@
 }
 
 @media (min-width: 500px) {
-    .reactivate-container{
+    .reactivate-container {
         font-size: 16px;
         padding: 16px 20px 10px;
         min-height: 101px;
         max-height: 131px;
     }
-    .alert-text{
+
+    .alert-text {
         line-height: 1.5em;
     }
 
-    .link-container{
+    .link-container {
         padding-top: 1.4em;
         padding-bottom: 0.15em;
     }
 }
 
 @media (min-width: 800px) {
-    .reactivate-container{
+    .reactivate-container {
         padding: 15px 40px;
         min-height: 65px;
         max-height: 78px;
@@ -76,13 +77,15 @@
         z-index: 999;
     }
 
-    .alert-text{
+    .alert-text {
         line-height: 1.5em;
     }
-    .link-container{
+
+    .link-container {
         padding-top: 0;
     }
-    .reactivate-link{
+
+    .reactivate-link {
         padding: 4px 22px;
-    }  
+    }
 }
