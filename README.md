@@ -2,7 +2,7 @@
 
 ![logo](https://github.com/IMGEORGEMOR/hbospain-webclone/blob/main/src/assets/hbologo_readme.png)
 
-![Official site](https://hbospain-webclone.vercel.app/)
+[Official site](https://hbospain-webclone.vercel.app/)
 
 Front-end application clone of the former HBO Video Streaming platform for educational purposes developed with React js. Probably the most accurate HBO clone on all Github. Already working on the HBOMAX platform.
 
